@@ -4,7 +4,7 @@ const Index = () => {
   return (
     <div>
       <div>
-        <Link href="">
+        <Link href="/">
           <a>Index</a>
         </Link>
         <Link href="/users">

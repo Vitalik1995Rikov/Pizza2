@@ -1,11 +1,12 @@
 import React from 'react';
 import Layout from './layouts/Layout';
-import { Pizza } from './components';
+import { Pizza, Filters } from './components';
 
 const App = () => {
   return (
     <div>
       <Layout />
+      <Filters />
       <Pizza />
     </div>
   );

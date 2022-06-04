@@ -1,4 +1,5 @@
 import React from 'react';
+import Button from './Button';
 
 const pizzas = [
   {
@@ -72,6 +73,9 @@ const Pizza = () => {
           <li key={item.id}>
             <img className="w-40" src={item.img} alt="img" />
             <span>{item.name}</span>
+            <div>
+              <Button />
+            </div>
           </li>
         ))}
       </ul>

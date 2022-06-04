@@ -5,9 +5,8 @@ import { Pizza } from './components';
 const App = () => {
   return (
     <div>
-      <Layout>
-        <Pizza />
-      </Layout>
+      <Layout />
+      <Pizza />
     </div>
   );
 };

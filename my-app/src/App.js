@@ -1,7 +1,15 @@
 import React from 'react';
+import Layout from './layouts/Layout';
+import { Pizza } from './components';
 
 const App = () => {
-  return <div>Pizza2</div>;
+  return (
+    <div>
+      <Layout>
+        <Pizza />
+      </Layout>
+    </div>
+  );
 };
 
 export default App;

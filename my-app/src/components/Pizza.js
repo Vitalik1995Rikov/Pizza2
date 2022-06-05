@@ -1,5 +1,5 @@
 import React from 'react';
-import Button from './Button';
+import PizzaItem from './PizzaItem';
 
 const pizzas = [
   {
@@ -70,13 +70,14 @@ const Pizza = () => {
       <span className="text-2xl font-bold">Все пиццы</span>
       <ul className="grid grid-cols-4">
         {pizzas.map((item) => (
-          <li key={item.id}>
-            <img className="w-40" src={item.img} alt="img" />
-            <span>{item.name}</span>
-            <div>
-              <Button />
-            </div>
-          </li>
+          <PizzaItem obj={item} />
+          // <li key={item.id}>
+          //   <img className="w-40" src={item.img} alt="img" />
+          //   <span>{item.name}</span>
+          //   <div>
+          //     <Button />
+          //   </div>
+          // </li>
         ))}
       </ul>
     </div>

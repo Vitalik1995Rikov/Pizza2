@@ -1,15 +1,21 @@
-const filters = ['Мясные', 'Вегетарианская', 'Гриль', 'Острые', 'Закрытые'];
+import { useState } from 'react';
+
+const filters = ['Все', 'Мясные', 'Вегетарианская', 'Гриль', 'Острые', 'Закрытые'];
 
 function Filters() {
+  const [activeButton, setActiveButton] = useState(0);
+  const onClickCategory = (index) => {
+    setActiveButton(index);
+  };
   return (
     <div>
       <ul className="flex justify-center space-x-10">
-        <li>
-          <button>Все</button>
-        </li>
         {filters &&
           filters.map((items, idx) => (
-            <ul key={idx}>
+            <ul
+              key={idx}
+              onClick={() => onClickCategory(idx)}
+              className={activeButton === idx ? 'bg-slate-400' : ''}>
               <li>
                 <button>{items}</button>
               </li>

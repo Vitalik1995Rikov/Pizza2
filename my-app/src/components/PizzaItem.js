@@ -13,9 +13,9 @@ function PizzaItem({ obj }) {
             <li>стандарт</li>
           </ul>
           <ul className="grid grid-cols-3">
-            <li>25</li>
-            <li>30</li>
-            <li>35</li>
+            {obj.sizes.map((item) => (
+              <li>{item} sm</li>
+            ))}
           </ul>
         </div>
         <div className="flex">

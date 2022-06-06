@@ -1,12 +1,15 @@
 import React from 'react';
 import Layout from './layouts/Layout';
-import { Pizza, Filters } from './components';
+import { Pizza, Filters, Sort } from './components';
 
 const App = () => {
   return (
     <div>
       <Layout />
-      <Filters />
+      <div className="flex justify-around">
+        <Filters />
+        <Sort />
+      </div>
       <Pizza />
     </div>
   );

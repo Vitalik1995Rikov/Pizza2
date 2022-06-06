@@ -106,7 +106,7 @@ const Pizza = () => {
       <span className="text-2xl font-bold">Все пиццы</span>
       <ul className="grid grid-cols-4">
         {pizzas.map((item) => (
-          <PizzaItem obj={item} />
+          <PizzaItem key={item.id} obj={item} />
         ))}
       </ul>
     </div>

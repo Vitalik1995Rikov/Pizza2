@@ -13,6 +13,7 @@ function PizzaItem({ obj }) {
           <ul className="grid grid-cols-2">
             {obj.types.map((item, i) => (
               <li
+                key={i}
                 onClick={() => setActiveType(i)}
                 className={activeType === i ? 'bg-slate-50' : ''}>
                 {typesOfPizzas[i]}
@@ -21,7 +22,7 @@ function PizzaItem({ obj }) {
           </ul>
           <ul className="grid grid-cols-3">
             {obj.sizes.map((item) => (
-              <li>{item} sm</li>
+              <li key={item}>{item} sm</li>
             ))}
           </ul>
         </div>

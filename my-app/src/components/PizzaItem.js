@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Button from './Button';
 
 function PizzaItem({ obj }) {
-  const typesOfPizzas = ['тонкое', 'стандарт'];
+  const typesOfPizzas = ['thin', 'standart'];
   const [activeType, setActiveType] = useState('');
   return (
     <div>

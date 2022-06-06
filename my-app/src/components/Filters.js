@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-const filters = ['Все', 'Мясные', 'Вегетарианская', 'Гриль', 'Острые', 'Закрытые'];
+const filters = ['All', 'Meat', 'Vegetarian', 'Grilled', 'Spicy', 'Closed'];
 
 function Filters() {
   const [activeButton, setActiveButton] = useState(0);

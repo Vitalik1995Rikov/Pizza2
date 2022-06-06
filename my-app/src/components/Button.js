@@ -5,7 +5,7 @@ function Button() {
   const onClick = () => {
     setCount(count + 1);
   };
-  return <div onClick={onClick}>Добавить {count}</div>;
+  return <div onClick={onClick}>Add {count}</div>;
 }
 
 export default Button;

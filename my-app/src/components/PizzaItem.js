@@ -4,6 +4,7 @@ import Button from './Button';
 function PizzaItem({ obj }) {
   const typesOfPizzas = ['thin', 'standart'];
   const [activeType, setActiveType] = useState('');
+  const [activeSize, setActiveSize] = useState(null);
   return (
     <div>
       <li key={obj.id}>
@@ -22,7 +23,12 @@ function PizzaItem({ obj }) {
           </ul>
           <ul className="grid grid-cols-3">
             {obj.sizes.map((item) => (
-              <li key={item}>{item} sm</li>
+              <li
+                key={item}
+                onClick={() => setActiveSize(item)}
+                className={activeSize === item ? 'bg-slate-50' : ''}>
+                {item} sm
+              </li>
             ))}
           </ul>
         </div>

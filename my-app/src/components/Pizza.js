@@ -1,6 +1,8 @@
 import React from 'react';
 import PizzaItem from './PizzaItem';
 
+fetch('https://62a8e484943591102bab74e4.mockapi.io/items');
+
 const pizzas = [
   {
     id: 1,

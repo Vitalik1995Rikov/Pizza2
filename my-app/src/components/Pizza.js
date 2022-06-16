@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import PizzaItem from './PizzaItem';
+// import PizzaItem from './PizzaItem';
+import MyLoader from './MyLoader';
 
 // const pizzas = [
 //   {
@@ -115,7 +116,7 @@ const Pizza = () => {
       <span className="text-2xl font-bold">All pizzas</span>
       <ul className="grid grid-cols-4">
         {pizzas.map((item) => (
-          <PizzaItem key={item.id} obj={item} />
+          <MyLoader key={item.id} obj={item} />
         ))}
       </ul>
     </div>

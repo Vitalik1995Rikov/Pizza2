@@ -9,7 +9,7 @@ const Pizza = () => {
     () =>
       fetch('https://62a8e484943591102bab74e4.mockapi.io/items')
         .then((res) => {
-          res.json();
+          return res.json();
         })
         .then((json) => {
           setPizzas(json);
@@ -23,7 +23,7 @@ const Pizza = () => {
       <span className="text-2xl font-bold">All pizzas</span>
       <ul className="grid grid-cols-4">
         {isLoading
-          ? [...new Array(6)].map(() => <MyLoader />)
+          ? [...new Array(6)].map((i, item) => <MyLoader key={item} />)
           : pizzas.map((item) => <PizzaItem key={item.id} obj={item} />)}
       </ul>
     </div>

@@ -1,16 +1,15 @@
 import React from 'react';
 import Layout from './layouts/Layout';
-import { Pizza, Filters, Sort } from './components';
+import Home from './pages/Home';
+import { Routes, Route } from 'react-router-dom';
 
 const App = () => {
   return (
     <div>
       <Layout />
-      <div className="flex justify-around">
-        <Filters />
-        <Sort />
-      </div>
-      <Pizza />
+      <Routes>
+        <Home />
+      </Routes>
     </div>
   );
 };

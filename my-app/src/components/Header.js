@@ -15,6 +15,11 @@ const Header = () => {
           </div>
         </div>
       </Link>
+      <div>
+        <Link to="/cart">
+          <div>Cart</div>
+        </Link>
+      </div>
     </div>
   );
 };

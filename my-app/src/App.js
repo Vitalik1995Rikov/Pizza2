@@ -1,6 +1,7 @@
 import React from 'react';
 import Layout from './layouts/Layout';
 import Home from './pages/Home';
+import NotFound from './pages/NotFound';
 import { Routes, Route } from 'react-router-dom';
 
 const App = () => {
@@ -8,7 +9,8 @@ const App = () => {
     <div>
       <Layout />
       <Routes>
-        <Home />
+        <Route path="/" element={<Home />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </div>
   );

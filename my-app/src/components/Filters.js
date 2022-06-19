@@ -1,12 +1,6 @@
-import { useState } from 'react';
-
 const filters = ['All', 'Meat', 'Vegetarian', 'Grilled', 'Spicy', 'Closed'];
 
-function Filters() {
-  const [activeButton, setActiveButton] = useState(0);
-  const onClickCategory = (index) => {
-    setActiveButton(index);
-  };
+function Filters({ value, onClickCategory }) {
   return (
     <div>
       <ul className="flex justify-center space-x-10">
@@ -15,7 +9,7 @@ function Filters() {
             <ul
               key={idx}
               onClick={() => onClickCategory(idx)}
-              className={activeButton === idx ? 'bg-slate-400' : ''}>
+              className={value === idx ? 'bg-slate-400' : ''}>
               <li>
                 <button>{items}</button>
               </li>

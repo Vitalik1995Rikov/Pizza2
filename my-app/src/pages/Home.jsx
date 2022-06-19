@@ -1,16 +1,39 @@
 import React from "react"
-import { useState } from "react";
-import { Pizza, Filters, Sort } from '../components';
+import { useState, useEffect } from "react";
+import { Filters, Sort } from '../components';
+import PizzaItem from '../components/PizzaItem';
+import MyLoader from '../components/MyLoader';
 
 function Home() {
     const [categoryId, setCategoryId] = useState(0);
+    const [pizzas, setPizzas] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+  useEffect(
+    () =>
+      fetch('https://62a8e484943591102bab74e4.mockapi.io/items')
+        .then((res) => {
+          return res.json();
+        })
+        .then((json) => {
+          setPizzas(json);
+          setIsLoading(false);
+        }),
+    [],
+  );
     return (
         <div>
             <div className="flex justify-around">
                 <Filters value={categoryId} onClickCategory={(i) => setCategoryId(i)}/>
                 <Sort />
             </div>
-            <Pizza />
+            <div className="m-5">
+      <span className="text-2xl font-bold">All pizzas</span>
+      <ul className="grid grid-cols-4">
+        {isLoading
+          ? [...new Array(6)].map((i, item) => <MyLoader key={item} />)
+          : pizzas.map((item) => <PizzaItem key={item.id} obj={item} />)}
+      </ul>
+    </div>
         </div>
     )
 }

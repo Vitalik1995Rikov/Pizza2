@@ -7,19 +7,20 @@ import MyLoader from '../components/MyLoader';
 function Home() {
     const [categoryId, setCategoryId] = useState(0);
     const [pizzas, setPizzas] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
-  useEffect(
-    () =>
-      fetch('https://62a8e484943591102bab74e4.mockapi.io/items')
+    const [isLoading, setIsLoading] = useState(true);
+  useEffect(() => {
+    setIsLoading(true)
+      fetch('https://62a8e484943591102bab74e4.mockapi.io/items?category=' + categoryId)
         .then((res) => {
           return res.json();
         })
         .then((json) => {
           setPizzas(json);
           setIsLoading(false);
-        }),
-    [],
-  );
+        });
+        window.scrollTo(0, 0);
+      }, [categoryId],
+      );
     return (
         <div>
             <div className="flex justify-around">
